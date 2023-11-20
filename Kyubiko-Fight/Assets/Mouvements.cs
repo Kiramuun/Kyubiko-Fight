@@ -5,13 +5,16 @@ using UnityEngine;
 public class Mouvements : MonoBehaviour
 {
     Vector2 _movementInput;
-    public Animator _animatorRef;
+    Animator _animatorRef;
     Rigidbody2D _rigidB;
     public float _speed;
+    bool _right;
 
     void Awake()
     {
+        _animatorRef = GetComponentInChildren<Animator>();
         _rigidB = GetComponent<Rigidbody2D>();
+        _right = true;
     }
 
     void Start()
@@ -28,32 +31,23 @@ public class Mouvements : MonoBehaviour
 
         Vector2 dir = new Vector2(horizontal, 0);
         dir = dir.normalized;
-
+        float localCurrentX = transform.localScale.x;
         if (dir.x < 0)
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            //if (dir.x == localCurrentX) { }
+            transform.localScale = new Vector3(-0.5f,0.5f,0.5f);
         }
         if (dir.x > 0)
         {
-            transform.localScale = new Vector3(1, 1, 1);
+            transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
         }
-
-        /*Vector3 dir = Vector3.zero;
-
-        if (horizontal > 0)
+        /*if (localCurrentX < 0)
         {
-            _direction = 1;
-            dir = Vector3.left;
-
-            transform.localScale = new Vector3(_direction, transform.localScale.y, transform.localScale.z);
+            _right = false;
         }
-
-        if (horizontal < 0)
+        if (localCurrentX > 0)
         {
-            _direction = -1;
-            dir = Vector3.right;
-
-            transform.localScale = new Vector3(_direction, transform.localScale.y, transform.localScale.z);
+            _right=true;
         }*/
 
         //Permet de passer en "Mode Sprint" en augmentant la vitesse quand on appuie
@@ -62,7 +56,6 @@ public class Mouvements : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.LeftShift)) { _speed /= 2f; }
 
         _animatorRef.SetFloat("Horizontal", horizontal);
-        //_animatorRef.SetFloat("Vertical", vertical);
     }
 
     void FixedUpdate()

@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class Attaque : MonoBehaviour
 {
-    public Animator _animatorRef;
+    Animator _animatorRef;
+
+    void Awake()
+    {
+        _animatorRef = GetComponentInChildren<Animator>();
+    }
 
     void Start()
     {

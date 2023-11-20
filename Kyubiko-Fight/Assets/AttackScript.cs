@@ -19,9 +19,26 @@ public class AttackScript : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        #region Attack Ahri
         animator.SetBool("attackSplash", false);
         animator.SetBool("attackFireball", false);
         animator.SetBool("Ultimate", false);
+        #endregion
+        #region Attack Chevaliere
+        animator.SetBool("slashVerti", false);
+        animator.SetBool("Estoc", false);
+        animator.SetBool("ultiTornado", false);
+        #endregion
+        #region Attack Corbeau
+        animator.SetBool("Cslash", false);
+        animator.SetBool("Cslash2", false);
+        animator.SetBool("CslashChargé", false);
+        #endregion
+        #region Attack Tengu
+        animator.SetBool("Tslash", false);
+        animator.SetBool("Tslash2", false);
+        animator.SetBool("TslashChargé", false);
+        #endregion
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
