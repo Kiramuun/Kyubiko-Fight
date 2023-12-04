@@ -10,18 +10,18 @@ using UnityEngine.UI;
 [CreateAssetMenu]
 public class UIMenu : ScriptableObject
 {
-    public Slider _musicSlide;
-    public AudioMixerGroup _group;
-    
+
+    UISliderPref _sliderPref;
+
+    public void OnEnable()
+    {
+        _sliderPref.SaveDonnée();
+    }
+
     void Start()
     {
         
     }
-    public void SliderChange()
-    {
-        
-    }
-
     
     void Update()
     {

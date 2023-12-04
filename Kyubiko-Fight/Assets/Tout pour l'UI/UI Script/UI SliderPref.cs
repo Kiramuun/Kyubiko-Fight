@@ -11,6 +11,12 @@ public class UISliderPref : MonoBehaviour
                   _fieldNameMixer = "Default";
     Slider _slider;
     public AudioMixer _mixer;
+
+    public void SaveDonnée()
+    {
+         _slider.value = PlayerPrefs.GetFloat(_fieldName);
+    }
+
     void Awake()
     {
         _slider = GetComponent<Slider>();
