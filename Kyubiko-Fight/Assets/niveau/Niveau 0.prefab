@@ -13944,7 +13944,7 @@ GameObject:
   - component: {fileID: 425380893978760637}
   - component: {fileID: 5162259008001303557}
   m_Layer: 0
-  m_Name: Prototype Niveau
+  m_Name: Niveau 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
