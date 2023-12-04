@@ -1110,7 +1110,7 @@ GameObject:
   - component: {fileID: 8288803123610517774}
   - component: {fileID: 4229578753421111726}
   m_Layer: 0
-  m_Name: niveau 2
+  m_Name: niveau 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
